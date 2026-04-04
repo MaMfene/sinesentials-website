@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sinesentials | Booking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <div class="brand">
+        <img src="logo.jpeg" alt="Sinesentials logo" class="logo-img" />
+        <span>Sinesentials</span>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="topbar-right">
+        <a href="tel:+27716283009" class="phone-link">071 628 3009</a>
+        <a href="booking.html" class="book-btn">Book Now</a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero">
+        <p class="eyebrow">BOOKING</p>
+        <h1 class="page-title">Book your cleaning service.</h1>
+        <p class="page-subtext">
+          Fill in the form below and we’ll get back to you with booking details.
+        </p>
+      </section>
+
+      <section class="booking-section">
+        <div class="booking-card">
+          <form class="booking-form" id="bookingForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="071 628 3009" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com">
+              </div>
+
+              <div class="form-group">
+                <label for="service">Service Needed</label>
+                <select id="service" name="service" required>
+                  <option value="">Select a service</option>
+                  <option value="Student Rooms">Student Rooms</option>
+                  <option value="1-Bedroom Apartment">1-Bedroom Apartment</option>
+                  <option value="2-Bedroom House">2-Bedroom House</option>
+                  <option value="3+ Bedroom House">3+ Bedroom House</option>
+                  <option value="After-Party Cleanups">After-Party Cleanups</option>
+                  <option value="Large Venue">Large Venue</option>
+                  <option value="Office Cleaning">Office Cleaning</option>
+                  <option value="Add-Ons">Add-Ons</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="bookingDate">Preferred Date</label>
+                <input type="date" id="bookingDate" name="bookingDate">
+              </div>
+
+              <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" placeholder="Potchefstroom, area/suburb">
+              </div>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="message">Extra Details</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell us about the space, size, or anything important."></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="primary-btn form-btn">Send Booking Request</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Sinesentials. All rights reserved.</p>
+      <div class="socials">
+        <a href="https://www.tiktok.com/@Sinesentials" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/Sinesentials" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const selectedService = params.get("service");
+    const serviceField = document.getElementById("service");
+
+    if (selectedService && serviceField) {
+      serviceField.value = selectedService;
+    }
+
+    document.getElementById("bookingForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const fullName = document.getElementById("fullName").value;
+      const phone = document.getElementById("phone").value;
+      const email = document.getElementById("email").value;
+      const service = document.getElementById("service").value;
+      const bookingDate = document.getElementById("bookingDate").value;
+      const location = document.getElementById("location").value;
+      const message = document.getElementById("message").value;
+
+      const text =
+        `Hi, I would like to book a cleaning service.%0A%0A` +
+        `Name: ${encodeURIComponent(fullName)}%0A` +
+        `Phone: ${encodeURIComponent(phone)}%0A` +
+        `Email: ${encodeURIComponent(email)}%0A` +
+        `Service: ${encodeURIComponent(service)}%0A` +
+        `Preferred Date: ${encodeURIComponent(bookingDate)}%0A` +
+        `Location: ${encodeURIComponent(location)}%0A` +
+        `Extra Details: ${encodeURIComponent(message)}`;
+
+      window.open(`https://wa.me/27716283009?text=${text}`, "_blank");
+    });
+  </script>
+</body>
+</html>
