@@ -142,6 +142,7 @@
       const bookingDate = document.getElementById("bookingDate").value;
       const location = document.getElementById("location").value;
       const message = document.getElementById("message").value;
+      const paymentMethod = document.getElementById("paymentMethod").value;
 
       const text =
         `Hi, I would like to book a cleaning service.%0A%0A` +
@@ -151,7 +152,8 @@
         `Service: ${encodeURIComponent(service)}%0A` +
         `Preferred Date: ${encodeURIComponent(bookingDate)}%0A` +
         `Location: ${encodeURIComponent(location)}%0A` +
-        `Extra Details: ${encodeURIComponent(message)}`;
+`Payment Method: ${encodeURIComponent(paymentMethod)}%0A` +
+`Extra Details: ${encodeURIComponent(message)}`;
 
       window.open(`https://wa.me/27716283009?text=${text}`, "_blank");
     });
