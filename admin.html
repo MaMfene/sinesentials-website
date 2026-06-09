@@ -286,21 +286,30 @@ async function loadBookings(){
 
   }
 
-  data.forEach((booking)=>{
+data.forEach((booking)=>{
 
-    body.innerHTML += `
-      <tr>
-        <td>${booking.full_name || ""}</td>
-        <td>${booking.phone || ""}</td>
-        <td>${booking.email || ""}</td>
-        <td>${booking.service || ""}</td>
-        <td>${booking.booking_date || ""}</td>
-        <td>${booking.location || ""}</td>
-        <td>${booking.status || "Pending"}</td>
-      </tr>
-    `;
+  body.innerHTML += `
+    <tr>
+      <td>${booking.full_name || ""}</td>
+      <td>${booking.phone || ""}</td>
+      <td>${booking.email || ""}</td>
+      <td>${booking.service || ""}</td>
+      <td>${booking.booking_date || ""}</td>
+      <td>${booking.location || ""}</td>
 
-  });
+      <td>
+        <select onchange="updateStatus(${booking.id}, this.value)">
+          <option value="Pending" ${booking.status==="Pending"?"selected":""}>Pending</option>
+          <option value="Accepted" ${booking.status==="Accepted"?"selected":""}>Accepted</option>
+          <option value="Completed" ${booking.status==="Completed"?"selected":""}>Completed</option>
+          <option value="Cancelled" ${booking.status==="Cancelled"?"selected":""}>Cancelled</option>
+        </select>
+      </td>
+
+    </tr>
+  `;
+
+});
 
 }
 
@@ -314,6 +323,22 @@ document
   dashboardSection.style.display = "none";
 
 });
+  async function updateStatus(id, status){
+
+  const { error } =
+  await supabaseClient
+  .from("bookings")
+  .update({ status })
+  .eq("id", id);
+
+  if(error){
+    alert(error.message);
+    return;
+  }
+
+  alert("Status updated");
+}
+  
 
 checkSession();
 
