@@ -1,22 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sinesentials Admin</title>
+<title>Sinesentials Admin Dashboard</title>
 
 <link rel="stylesheet" href="style.css">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
+
 <body>
 
 <div class="page-main">
 
-<h1>Bookings Dashboard</h1>
+<h1>Sinesentials Bookings</h1>
 
-<table id="bookingsTable" style="width:100%; margin-top:20px;">
+<br>
+
+<button id="logoutBtn" class="secondary-btn">
+Logout
+</button>
+
+<br><br>
+
+<div class="booking-card">
+
+<table style="width:100%;border-collapse:collapse;">
+
 <thead>
 <tr>
 <th>Name</th>
@@ -27,12 +39,17 @@
 </tr>
 </thead>
 
-<tbody></tbody>
+<tbody id="bookingsBody">
+</tbody>
+
 </table>
 
 </div>
 
+</div>
+
 <script>
+
 const supabaseUrl =
 "https://wvcvzcjkipfxxklxehab.supabase.co";
 
@@ -42,31 +59,53 @@ const supabaseKey =
 
 const supabaseClient =
 supabase.createClient(
-  supabaseUrl,
-  supabaseKey
+supabaseUrl,
+supabaseKey
 );
 
-async function loadBookings() {
+async function checkAuth(){
+
+const {
+data: { session }
+}
+=
+await supabaseClient.auth.getSession();
+
+if(!session){
+window.location.href =
+"admin-login.html";
+return;
+}
+
+loadBookings();
+
+}
+
+async function loadBookings(){
 
 const { data, error } =
 await supabaseClient
 .from("bookings")
 .select("*")
-.order("created_at", { ascending:false });
+.order("created_at", {
+ascending:false
+});
 
 if(error){
 console.error(error);
 return;
 }
 
-const tbody =
-document.querySelector("#bookingsTable tbody");
+const body =
+document.getElementById(
+"bookingsBody"
+);
 
-tbody.innerHTML = "";
+body.innerHTML = "";
 
 data.forEach(booking => {
 
-tbody.innerHTML += `
+body.innerHTML += `
 <tr>
 <td>${booking.full_name}</td>
 <td>${booking.phone}</td>
@@ -80,7 +119,19 @@ tbody.innerHTML += `
 
 }
 
-loadBookings();
+document
+.getElementById("logoutBtn")
+.addEventListener("click", async () => {
+
+await supabaseClient.auth.signOut();
+
+window.location.href =
+"admin-login.html";
+
+});
+
+checkAuth();
+
 </script>
 
 </body>
