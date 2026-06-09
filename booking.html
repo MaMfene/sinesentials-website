@@ -97,7 +97,7 @@
   <select id="paymentMethod" name="paymentMethod" required>
     <option value="">Select payment method</option>
     <option value="cash">Cash</option>
-    <option value="eft">EFT (50% upfront required)</option>
+    <option value="eft">Payshap</option>
   </select>
 </div>
 
@@ -148,12 +148,12 @@ if (selectedService && serviceField) {
 }
 
 document
-.getElementById("bookingForm")
-.addEventListener(
-"submit",
-async function(e){
+  .getElementById("bookingForm")
+  .addEventListener("submit", async function (e) {
 
-e.preventDefault();
+    alert("Form submitted");
+
+    e.preventDefault();
 
 const submitBtn =
 document.querySelector(".form-btn");
