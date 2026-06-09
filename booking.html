@@ -122,41 +122,102 @@
       </div>
     </footer>
   </div>
+```html
+<script>
+const supabaseUrl =
+"https://wvcvzcjkipfxxklxehab.supabase.co";
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const selectedService = params.get("service");
-    const serviceField = document.getElementById("service");
+const supabaseKey =
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2Y3Z6Y2praXBmeHhrbHhlaGFiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMDU1MjksImV4cCI6MjA5NjU4MTUyOX0.kdSIc2QlADnuiO8gcMJp6joISy97Lc56QH46R6C0z3g";
 
-    if (selectedService && serviceField) {
-      serviceField.value = selectedService;
-    }
+const supabase =
+window.supabase.createClient(
+  supabaseUrl,
+  supabaseKey
+);
 
-    document.getElementById("bookingForm").addEventListener("submit", function (e) {
-      e.preventDefault();
+const params = new URLSearchParams(window.location.search);
+const selectedService = params.get("service");
+const serviceField = document.getElementById("service");
 
-      const fullName = document.getElementById("fullName").value;
-      const phone = document.getElementById("phone").value;
-      const email = document.getElementById("email").value;
-      const service = document.getElementById("service").value;
-      const bookingDate = document.getElementById("bookingDate").value;
-      const location = document.getElementById("location").value;
-      const message = document.getElementById("message").value;
-      const paymentMethod = document.getElementById("paymentMethod").value;
+if (selectedService && serviceField) {
+  serviceField.value = selectedService;
+}
 
-      const text =
-  `Hi, I would like to book a cleaning service.%0A%0A` +
-  `Name: ${encodeURIComponent(fullName)}%0A` +
-  `Phone: ${encodeURIComponent(phone)}%0A` +
-  `Email: ${encodeURIComponent(email)}%0A` +
-  `Service: ${encodeURIComponent(service)}%0A` +
-  `Preferred Date: ${encodeURIComponent(bookingDate)}%0A` +
-  `Location: ${encodeURIComponent(location)}%0A` +
-  `Payment Method: ${encodeURIComponent(paymentMethod)}%0A` +
-  `Extra Details: ${encodeURIComponent(message)}`;
+document
+.getElementById("bookingForm")
+.addEventListener(
+"submit",
+async function(e){
 
-      window.open(`https://wa.me/27716283009?text=${text}`, "_blank");
-    });
-  </script>
-</body>
-</html>
+e.preventDefault();
+
+const submitBtn =
+document.querySelector(".form-btn");
+
+submitBtn.disabled = true;
+submitBtn.innerText = "Submitting...";
+
+const bookingData = {
+
+full_name:
+document.getElementById("fullName").value,
+
+phone:
+document.getElementById("phone").value,
+
+email:
+document.getElementById("email").value,
+
+service:
+document.getElementById("service").value,
+
+booking_date:
+document.getElementById("bookingDate").value,
+
+location:
+document.getElementById("location").value,
+
+payment_method:
+document.getElementById("paymentMethod").value,
+
+message:
+document.getElementById("message").value
+
+};
+
+const { error } =
+await supabase
+.from("bookings")
+.insert([bookingData]);
+
+if(error){
+
+console.error(error);
+
+alert(
+"Booking failed. Please try again."
+);
+
+submitBtn.disabled = false;
+submitBtn.innerText =
+"Send Booking Request";
+
+return;
+}
+
+alert(
+"Booking submitted successfully. We will contact you shortly."
+);
+
+document
+.getElementById("bookingForm")
+.reset();
+
+submitBtn.disabled = false;
+submitBtn.innerText =
+"Send Booking Request";
+
+});
+</script>
+```
