@@ -119,6 +119,8 @@ data: { session }
 =
 await supabaseClient.auth.getSession();
 
+console.log("Current session:", session);
+
 if(!session){
 
 window.location.href =
