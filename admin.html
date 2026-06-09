@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,39 +8,87 @@
 <title>Sinesentials Admin Dashboard</title>
 
 <link rel="stylesheet" href="style.css">
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+padding:14px;
+border-bottom:1px solid #e5e7eb;
+text-align:left;
+}
+
+th{
+background:#f8fafc;
+font-weight:700;
+}
+
+.dashboard-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+flex-wrap:wrap;
+gap:12px;
+}
+
+.status-pill{
+background:#dbeafe;
+color:#1d4ed8;
+padding:6px 12px;
+border-radius:999px;
+font-size:13px;
+font-weight:600;
+}
+</style>
+
 </head>
 
 <body>
 
 <div class="page-main">
 
-<h1>Sinesentials Bookings</h1>
+<div class="dashboard-header">
 
-<br>
+<div>
+<h1>Sinesentials Admin Dashboard</h1>
+<p>Manage all customer bookings.</p>
+</div>
 
 <button id="logoutBtn" class="secondary-btn">
 Logout
 </button>
 
-<br><br>
+</div>
 
 <div class="booking-card">
 
-<table style="width:100%;border-collapse:collapse;">
+<table>
 
 <thead>
 <tr>
 <th>Name</th>
 <th>Phone</th>
+<th>Email</th>
 <th>Service</th>
 <th>Date</th>
+<th>Location</th>
 <th>Status</th>
 </tr>
 </thead>
 
 <tbody id="bookingsBody">
+
+<tr>
+<td colspan="7">
+Loading bookings...
+</td>
+</tr>
+
 </tbody>
 
 </table>
@@ -54,8 +103,7 @@ const supabaseUrl =
 "https://wvcvzcjkipfxxklxehab.supabase.co";
 
 const supabaseKey =
-"const supabaseKey =
-"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2Y3Z6Y2praXBmeHhrbHhlaGFiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMDU1MjksImV4cCI6MjA5NjU4MTUyOX0.kdSIc2QlADnuiO8gcMJp6joISy97Lc56QH46R6C0z3g";";
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2Y3Z6Y2praXBmeHhrbHhlaGFiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMDU1MjksImV4cCI6MjA5NjU4MTUyOX0.kdSIc2QlADnuiO8gcMJp6joISy97Lc56QH46R6C0z3g";
 
 const supabaseClient =
 supabase.createClient(
@@ -72,9 +120,12 @@ data: { session }
 await supabaseClient.auth.getSession();
 
 if(!session){
+
 window.location.href =
 "admin-login.html";
+
 return;
+
 }
 
 loadBookings();
@@ -83,7 +134,11 @@ loadBookings();
 
 async function loadBookings(){
 
-const { data, error } =
+const {
+data,
+error
+}
+=
 await supabaseClient
 .from("bookings")
 .select("*")
@@ -91,15 +146,38 @@ await supabaseClient
 ascending:false
 });
 
-if(error){
-console.error(error);
-return;
-}
-
 const body =
 document.getElementById(
 "bookingsBody"
 );
+
+if(error){
+
+body.innerHTML =
+`<tr>
+<td colspan="7">
+${error.message}
+</td>
+</tr>`;
+
+console.error(error);
+
+return;
+
+}
+
+if(!data || data.length === 0){
+
+body.innerHTML =
+`<tr>
+<td colspan="7">
+No bookings found.
+</td>
+</tr>`;
+
+return;
+
+}
 
 body.innerHTML = "";
 
@@ -107,11 +185,17 @@ data.forEach(booking => {
 
 body.innerHTML += `
 <tr>
-<td>${booking.full_name}</td>
-<td>${booking.phone}</td>
-<td>${booking.service}</td>
+<td>${booking.full_name || ""}</td>
+<td>${booking.phone || ""}</td>
+<td>${booking.email || ""}</td>
+<td>${booking.service || ""}</td>
 <td>${booking.booking_date || ""}</td>
-<td>${booking.status}</td>
+<td>${booking.location || ""}</td>
+<td>
+<span class="status-pill">
+${booking.status || "Pending"}
+</span>
+</td>
 </tr>
 `;
 
