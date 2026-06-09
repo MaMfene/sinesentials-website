@@ -17,7 +17,7 @@
 }
 
 .admin-card{
-  background:#fff;
+  background:#ffffff;
   padding:30px;
   border-radius:20px;
   box-shadow:0 10px 30px rgba(0,0,0,.08);
@@ -32,8 +32,42 @@
   width:100%;
   padding:14px;
   margin-bottom:15px;
-  border:1px solid #ddd;
+  border:1px solid #dcdcdc;
   border-radius:12px;
+  font-size:15px;
+  box-sizing:border-box;
+}
+
+.login-btn{
+  width:100%;
+  padding:15px;
+  background:#1f72d8;
+  color:white;
+  border:none;
+  border-radius:12px;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.login-btn:hover{
+  opacity:.95;
+}
+
+.dashboard-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.logout-btn{
+  padding:12px 18px;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:700;
 }
 
 table{
@@ -42,7 +76,8 @@ table{
   margin-top:20px;
 }
 
-th,td{
+th,
+td{
   padding:12px;
   border-bottom:1px solid #e5e7eb;
   text-align:left;
@@ -52,8 +87,13 @@ th{
   background:#f8fafc;
 }
 
-.hidden{
-  display:none;
+@media (max-width:768px){
+
+  table{
+    display:block;
+    overflow-x:auto;
+  }
+
 }
 </style>
 
@@ -64,8 +104,11 @@ th{
 
   <div id="loginSection" class="admin-card">
 
-```
 <h1>Admin Login</h1>
+
+<p style="margin-bottom:20px;">
+  Sign in to view bookings.
+</p>
 
 <form id="loginForm" class="login-form">
 
@@ -83,39 +126,39 @@ th{
     required
   >
 
- <button
-  type="submit"
-  style="
-    width:100%;
-    padding:15px;
-    background:#1f72d8;
-    color:white;
-    border:none;
-    border-radius:12px;
-    font-size:16px;
-    font-weight:700;
-    cursor:pointer;
->
-  Login
-</button>
+  <button
+    type="submit"
+    class="login-btn"
+  >
+    Login
+  </button>
 
 </form>
-```
+    
 
   </div>
 
-  <div id="dashboardSection" class="admin-card hidden">
+  <div
+    id="dashboardSection"
+    class="admin-card"
+    style="display:none;"
+  >
 
-```
-<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;">
+<div class="dashboard-header">
+
   <h1>Sinesentials Bookings</h1>
 
-  <button id="logoutBtn" class="secondary-btn">
+  <button
+    id="logoutBtn"
+    class="logout-btn"
+  >
     Logout
   </button>
+
 </div>
 
 <table>
+
   <thead>
     <tr>
       <th>Name</th>
@@ -128,9 +171,11 @@ th{
     </tr>
   </thead>
 
-  <tbody id="bookingsBody"></tbody>
+  <tbody id="bookingsBody">
+  </tbody>
+
 </table>
-```
+    
 
   </div>
 
@@ -138,9 +183,11 @@ th{
 
 <script>
 
-const supabaseUrl = "const supabaseUrl =
-"https://wvcvzcjkipfxxklxehab.supabase.co";";
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2Y3Z6Y2praXBmeHhrbHhlaGFiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMDU1MjksImV4cCI6MjA5NjU4MTUyOX0.kdSIc2QlADnuiO8gcMJp6joISy97Lc56QH46R6C0z3g";
+const supabaseUrl =
+"https://wvcvzcjkipfxxklxehab.supabase.co";
+
+const supabaseKey =
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2Y3Z6Y2praXBmeHhrbHhlaGFiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMDU1MjksImV4cCI6MjA5NjU4MTUyOX0.kdSIc2QlADnuiO8gcMJp6joISy97Lc56QH46R6C0z3g";
 
 const supabaseClient =
 supabase.createClient(
@@ -154,7 +201,7 @@ document.getElementById("loginSection");
 const dashboardSection =
 document.getElementById("dashboardSection");
 
-async function checkSession(){
+async function checkSession() {
 
   const {
     data: { session }
@@ -162,15 +209,15 @@ async function checkSession(){
 
   if(session){
 
-    loginSection.classList.add("hidden");
-    dashboardSection.classList.remove("hidden");
+    loginSection.style.display = "none";
+    dashboardSection.style.display = "block";
 
-    loadBookings();
+    await loadBookings();
 
-  }else{
+  } else {
 
-    loginSection.classList.remove("hidden");
-    dashboardSection.classList.add("hidden");
+    loginSection.style.display = "block";
+    dashboardSection.style.display = "none";
 
   }
 
@@ -178,11 +225,9 @@ async function checkSession(){
 
 document
 .getElementById("loginForm")
-.addEventListener("submit", async (e)=>{
+.addEventListener("submit", async function(e){
 
-alert("Login button clicked");
-
-e.preventDefault();
+  e.preventDefault();
 
   const email =
   document.getElementById("email").value;
@@ -197,11 +242,16 @@ e.preventDefault();
   });
 
   if(error){
+
     alert(error.message);
     return;
+
   }
 
-  checkSession();
+  loginSection.style.display = "none";
+  dashboardSection.style.display = "block";
+
+  await loadBookings();
 
 });
 
@@ -211,17 +261,30 @@ async function loadBookings(){
   await supabaseClient
   .from("bookings")
   .select("*")
-  .order("created_at",{ascending:false});
+  .order("created_at", {
+    ascending: false
+  });
 
   if(error){
+
     alert(error.message);
     return;
+
   }
 
   const body =
   document.getElementById("bookingsBody");
 
   body.innerHTML = "";
+
+  if(!data || data.length === 0){
+
+    body.innerHTML =
+    "<tr><td colspan='7'>No bookings found.</td></tr>";
+
+    return;
+
+  }
 
   data.forEach((booking)=>{
 
@@ -243,10 +306,12 @@ async function loadBookings(){
 
 document
 .getElementById("logoutBtn")
-.addEventListener("click", async ()=>{
+.addEventListener("click", async function(){
 
   await supabaseClient.auth.signOut();
-  checkSession();
+
+  loginSection.style.display = "block";
+  dashboardSection.style.display = "none";
 
 });
 
