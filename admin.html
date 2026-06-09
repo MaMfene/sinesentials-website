@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sinesentials Admin</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<div class="page-main">
+
+<h1>Bookings Dashboard</h1>
+
+<table id="bookingsTable" style="width:100%; margin-top:20px;">
+<thead>
+<tr>
+<th>Name</th>
+<th>Phone</th>
+<th>Service</th>
+<th>Date</th>
+<th>Status</th>
+</tr>
+</thead>
+
+<tbody></tbody>
+</table>
+
+</div>
+
+<script>
+const supabaseUrl =
+"https://wvcvzcjkipfxxklxehab.supabase.co";
+
+const supabaseKey =
+"const supabaseKey =
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2Y3Z6Y2praXBmeHhrbHhlaGFiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMDU1MjksImV4cCI6MjA5NjU4MTUyOX0.kdSIc2QlADnuiO8gcMJp6joISy97Lc56QH46R6C0z3g";";
+
+const supabaseClient =
+supabase.createClient(
+  supabaseUrl,
+  supabaseKey
+);
+
+async function loadBookings() {
+
+const { data, error } =
+await supabaseClient
+.from("bookings")
+.select("*")
+.order("created_at", { ascending:false });
+
+if(error){
+console.error(error);
+return;
+}
+
+const tbody =
+document.querySelector("#bookingsTable tbody");
+
+tbody.innerHTML = "";
+
+data.forEach(booking => {
+
+tbody.innerHTML += `
+<tr>
+<td>${booking.full_name}</td>
+<td>${booking.phone}</td>
+<td>${booking.service}</td>
+<td>${booking.booking_date || ""}</td>
+<td>${booking.status}</td>
+</tr>
+`;
+
+});
+
+}
+
+loadBookings();
+</script>
+
+</body>
+</html>
