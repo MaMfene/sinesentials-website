@@ -976,65 +976,78 @@ footer p{
   margin-left:auto;
 }
 
+/* MOBILE OPTIMIZATION */
+
+.menu-toggle{
+  display:none;
+}
+
 @media (max-width:768px){
 
-  .menu-toggle{
-    display:block;
+  .page-main{
+    padding:20px;
   }
 
   .topbar{
-    padding:18px 20px;
-    flex-wrap:wrap;
-    gap:16px;
+    padding:16px 20px;
+    margin:10px;
+    border-radius:20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    flex-wrap:nowrap;
   }
 
   .brand{
-    font-size:22px;
+    font-size:20px;
   }
 
   .logo-img{
-    width:42px;
-    height:42px;
+    width:40px;
+    height:40px;
   }
 
   .nav{
-    display:none;
-    width:100%;
-    flex-direction:column;
-    align-items:center;
-    gap:16px;
-    padding-top:15px;
-  }
-
-  .nav.active{
     display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    justify-content:center;
   }
 
   .nav a{
-    font-size:16px;
-    font-weight:700;
+    font-size:13px;
   }
 
   .topbar-right{
+    display:flex;
+    gap:10px;
+  }
+
+  .phone-link{
     display:none;
   }
 
-  .page-main{
-    padding:24px 18px;
+  .book-btn{
+    padding:12px 18px;
+    font-size:13px;
   }
 
   .hero-home{
-    padding:40px 0;
+    flex-direction:column;
+    gap:30px;
+    text-align:center;
   }
 
   .hero-home h1{
-    font-size:48px;
-    letter-spacing:-2px;
+    font-size:42px;
+    line-height:1;
   }
 
   .page-title{
     font-size:42px;
-    letter-spacing:-2px;
+    line-height:1;
   }
 
   .hero-text,
@@ -1044,8 +1057,8 @@ footer p{
   }
 
   .home-grid,
-  .contact-page-grid,
   .services-page-grid,
+  .contact-page-grid,
   .pricing-cards{
     grid-template-columns:1fr;
   }
@@ -1058,21 +1071,15 @@ footer p{
     grid-template-columns:1fr;
   }
 
+  .booking-card,
   .large-card,
   .contact-card,
   .service-page-card,
-  .contact-page-card,
-  .booking-card,
-  .desktop-rates{
+  .contact-page-card{
     padding:24px;
   }
 
-  .pricing-card{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .contact-call-box a{
-    font-size:22px;
+  .hero-right img{
+    max-width:100%;
   }
 }
