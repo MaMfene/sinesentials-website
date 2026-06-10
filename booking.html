@@ -192,118 +192,76 @@
 
 <script>
 
-const supabaseUrl =
-"https://wvcvzcjkipfxxklxehab.supabase.co";
-
-const supabaseKey =
-"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2Y3Z6Y2praXBmeHhrbHhlaGFiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMDU1MjksImV4cCI6MjA5NjU4MTUyOX0.kdSIc2QlADnuiO8gcMJp6joISy97Lc56QH46R6C0z3g";
-
-const supabaseClient =
-supabase.createClient(
-  supabaseUrl,
-  supabaseKey
-);
-
 const params =
-new URLSearchParams(
-  window.location.search
-);
+new URLSearchParams(window.location.search);
 
 const selectedService =
 params.get("service");
 
 if (selectedService) {
   document.getElementById("service").value =
-    selectedService;
+  selectedService;
 }
 
 document
 .getElementById("bookingForm")
-.addEventListener("submit", async (e) => {
+.addEventListener("submit", (e) => {
 
   e.preventDefault();
 
-  const submitBtn =
-  document.querySelector(".form-btn");
+  const fullName =
+  document.getElementById("fullName").value;
 
-  submitBtn.disabled = true;
-  submitBtn.innerText =
-  "Submitting...";
+  const phone =
+  document.getElementById("phone").value;
 
-  const bookingData = {
+  const email =
+  document.getElementById("email").value;
 
-    full_name:
-    document.getElementById("fullName").value,
+  const service =
+  document.getElementById("service").value;
 
-    phone:
-    document.getElementById("phone").value,
+  const bookingDate =
+  document.getElementById("bookingDate").value;
 
-    email:
-    document.getElementById("email").value,
+  const location =
+  document.getElementById("location").value;
 
-    service:
-    document.getElementById("service").value,
+  const paymentMethod =
+  document.getElementById("paymentMethod").value;
 
-    booking_date:
-    document.getElementById("bookingDate").value,
+  const message =
+  document.getElementById("message").value;
 
-    location:
-    document.getElementById("location").value,
+  const whatsappMessage = `
+*NEW BOOKING REQUEST*
 
-    payment_method:
-    document.getElementById("paymentMethod").value,
+👤 Name: ${fullName}
 
-    message:
-    document.getElementById("message").value
+📞 Phone: ${phone}
 
-  };
+📧 Email: ${email}
 
-  try {
+🧹 Service: ${service}
 
-    const { error } =
-    await supabaseClient
-      .from("bookings")
-      .insert([bookingData]);
+📅 Date: ${bookingDate}
 
-    if (error) {
-      console.error(error);
+📍 Location: ${location}
 
-      alert(
-        "Booking failed. Please try again."
-      );
+💳 Payment: ${paymentMethod}
 
-      submitBtn.disabled = false;
-      submitBtn.innerText =
-      "Send Booking Request";
+📝 Details:
+${message}
+`;
 
-      return;
-    }
+  const whatsappURL =
+  `https://wa.me/27716283009?text=${encodeURIComponent(whatsappMessage)}`;
 
-    alert(
-      "Booking submitted successfully. We will contact you shortly."
-    );
-
-    document
-      .getElementById("bookingForm")
-      .reset();
-
-  } catch (err) {
-
-    console.error(err);
-
-    alert(
-      "Unexpected error occurred."
-    );
-
-  }
-
-  submitBtn.disabled = false;
-  submitBtn.innerText =
-  "Send Booking Request";
+  window.open(
+    whatsappURL,
+    "_blank"
+  );
 
 });
 
 </script>
-
-</body>
-</html>
