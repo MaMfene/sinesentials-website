@@ -55,7 +55,7 @@
       </h1>
 
       <p class="page-subtext">
-        Complete the form below and your booking will be sent directly into our booking system.
+        Complete the form below and your booking request will be sent directly to us on WhatsApp.
       </p>
     </section>
 
@@ -189,49 +189,28 @@
 
 <script>
 
-const params =
-new URLSearchParams(window.location.search);
-
-const selectedService =
-params.get("service");
+const params = new URLSearchParams(window.location.search);
+const selectedService = params.get("service");
 
 if (selectedService) {
-  document.getElementById("service").value =
-  selectedService;
+  document.getElementById("service").value = selectedService;
 }
 
-document
-.getElementById("bookingForm")
-.addEventListener("submit", (e) => {
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
 
   e.preventDefault();
 
-  const fullName =
-  document.getElementById("fullName").value;
+  const fullName = document.getElementById("fullName").value;
+  const phone = document.getElementById("phone").value;
+  const email = document.getElementById("email").value;
+  const service = document.getElementById("service").value;
+  const bookingDate = document.getElementById("bookingDate").value;
+  const location = document.getElementById("location").value;
+  const paymentMethod = document.getElementById("paymentMethod").value;
+  const message = document.getElementById("message").value;
 
-  const phone =
-  document.getElementById("phone").value;
-
-  const email =
-  document.getElementById("email").value;
-
-  const service =
-  document.getElementById("service").value;
-
-  const bookingDate =
-  document.getElementById("bookingDate").value;
-
-  const location =
-  document.getElementById("location").value;
-
-  const paymentMethod =
-  document.getElementById("paymentMethod").value;
-
-  const message =
-  document.getElementById("message").value;
-
-  const whatsappMessage = `
-*NEW BOOKING REQUEST*
+  const whatsappMessage =
+`🧹 *NEW BOOKING REQUEST*
 
 👤 Name: ${fullName}
 
@@ -248,20 +227,17 @@ document
 💳 Payment: ${paymentMethod}
 
 📝 Details:
-${message}
-`;
+${message}`;
 
   const whatsappURL =
-  `https://wa.me/27716283009?text=${encodeURIComponent(whatsappMessage)}`;
+    "https://wa.me/27716283009?text=" +
+    encodeURIComponent(whatsappMessage);
 
-  window.open(
-    whatsappURL,
-    "_blank"
-  );
+  window.location.href = whatsappURL;
 
 });
 
 </script>
-  </body>
-</html>
 
+</body>
+</html>
