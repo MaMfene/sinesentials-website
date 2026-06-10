@@ -968,11 +968,12 @@ footer p{
 
 .menu-toggle{
   display:none;
-  border:none;
   background:none;
-  font-size:24px;
+  border:none;
+  font-size:28px;
   cursor:pointer;
   color:var(--primary-dark);
+  margin-left:auto;
 }
 
 @media (max-width:768px){
@@ -981,24 +982,97 @@ footer p{
     display:block;
   }
 
+  .topbar{
+    padding:18px 20px;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+
+  .brand{
+    font-size:22px;
+  }
+
+  .logo-img{
+    width:42px;
+    height:42px;
+  }
+
   .nav{
     display:none;
     width:100%;
     flex-direction:column;
-    gap:18px;
-    text-align:center;
-    margin-top:20px;
+    align-items:center;
+    gap:16px;
+    padding-top:15px;
   }
 
   .nav.active{
     display:flex;
   }
 
-  .topbar{
-    flex-wrap:wrap;
+  .nav a{
+    font-size:16px;
+    font-weight:700;
   }
 
   .topbar-right{
     display:none;
+  }
+
+  .page-main{
+    padding:24px 18px;
+  }
+
+  .hero-home{
+    padding:40px 0;
+  }
+
+  .hero-home h1{
+    font-size:48px;
+    letter-spacing:-2px;
+  }
+
+  .page-title{
+    font-size:42px;
+    letter-spacing:-2px;
+  }
+
+  .hero-text,
+  .page-subtext{
+    font-size:16px;
+    line-height:1.7;
+  }
+
+  .home-grid,
+  .contact-page-grid,
+  .services-page-grid,
+  .pricing-cards{
+    grid-template-columns:1fr;
+  }
+
+  .feature-list{
+    grid-template-columns:1fr;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .large-card,
+  .contact-card,
+  .service-page-card,
+  .contact-page-card,
+  .booking-card,
+  .desktop-rates{
+    padding:24px;
+  }
+
+  .pricing-card{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .contact-call-box a{
+    font-size:22px;
   }
 }
