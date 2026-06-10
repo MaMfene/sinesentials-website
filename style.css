@@ -1,9 +1,3 @@
-```css
-/* ==================================================
-   SINESENTIALS PREMIUM STYLE
-   PART 1
-   ================================================== */
-
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root{
@@ -57,10 +51,6 @@ body{
   min-height:100vh;
   width:100%;
 }
-
-/* =====================================
-   HEADER
-   ===================================== */
 
 .topbar{
   max-width:1400px;
@@ -175,19 +165,11 @@ body{
   0 15px 35px rgba(15,76,219,.35);
 }
 
-/* =====================================
-   MAIN
-   ===================================== */
-
 .page-main{
   max-width:1400px;
   margin:0 auto;
   padding:50px 40px;
 }
-
-/* =====================================
-   EYEBROW
-   ===================================== */
 
 .eyebrow{
   display:inline-block;
@@ -208,10 +190,6 @@ body{
 
   margin-bottom:24px;
 }
-
-/* =====================================
-   HERO
-   ===================================== */
 
 .hero-home{
   display:flex;
@@ -330,10 +308,6 @@ body{
   border-color:var(--primary);
 }
 
-/* =====================================
-   TRUST STRIP
-   ===================================== */
-
 .trust-banner{
   display:grid;
 
@@ -358,15 +332,6 @@ body{
 
   box-shadow:var(--shadow-sm);
 }
-```
-/* ==================================================
-   PART 2
-   CARDS • SERVICES • PRICING • CONTACT
-   ================================================== */
-
-/* =========================
-   PAGE HERO
-   ========================= */
 
 .page-hero{
   padding:40px 0 30px;
@@ -391,10 +356,6 @@ body{
 
   color:var(--muted);
 }
-
-/* =========================
-   SHARED CARDS
-   ========================= */
 
 .feature-card,
 .contact-card,
@@ -422,10 +383,6 @@ body{
 
   box-shadow:var(--shadow-md);
 }
-
-/* =========================
-   HOME GRID
-   ========================= */
 
 .home-grid{
   display:grid;
@@ -489,10 +446,6 @@ body{
 
   line-height:1.8;
 }
-
-/* =========================
-   PREMIUM CONTACT CARD
-   ========================= */
 
 .contact-card,
 .blue-card{
@@ -608,10 +561,6 @@ body{
   transform:translateY(-2px);
 }
 
-/* =========================
-   SERVICES PAGE
-   ========================= */
-
 .services-page-grid{
   display:grid;
 
@@ -640,10 +589,6 @@ body{
 
   line-height:1.9;
 }
-
-/* =========================
-   PRICING SECTION
-   ========================= */
 
 .desktop-rates{
   margin-top:30px;
@@ -722,10 +667,6 @@ body{
   color:var(--primary);
 }
 
-/* =========================
-   CONTACT PAGE
-   ========================= */
-
 .contact-page-grid{
   display:grid;
 
@@ -776,14 +717,6 @@ body{
 
   line-height:1.8;
 }
-/* ==================================================
-   PART 3
-   BOOKING • FOOTER • MOBILE • PREMIUM EFFECTS
-   ================================================== */
-
-/* =========================
-   BOOKING SECTION
-   ========================= */
 
 .booking-section{
   margin-top:32px;
@@ -891,10 +824,6 @@ body{
   0 18px 40px rgba(15,76,219,.35);
 }
 
-/* =========================
-   PREMIUM FOOTER
-   ========================= */
-
 footer{
   margin-top:80px;
 
@@ -954,10 +883,6 @@ footer p{
   color:var(--primary);
 }
 
-/* =========================
-   PREMIUM ANIMATIONS
-   ========================= */
-
 @keyframes fadeUp{
   from{
     opacity:0;
@@ -981,10 +906,6 @@ footer p{
   animation:fadeUp .8s ease;
 }
 
-/* =========================
-   PREMIUM SCROLLBAR
-   ========================= */
-
 ::-webkit-scrollbar{
   width:10px;
 }
@@ -1001,10 +922,6 @@ footer p{
 ::-webkit-scrollbar-thumb:hover{
   background:var(--primary-dark);
 }
-
-/* =========================
-   TABLET
-   ========================= */
 
 @media (max-width:1100px){
 
@@ -1043,10 +960,6 @@ footer p{
     font-size:60px;
   }
 }
-
-/* =========================
-   MOBILE
-   ========================= */
 
 @media (max-width:768px){
 
@@ -1134,10 +1047,6 @@ footer p{
     height:42px;
   }
 }
-
-/* =========================
-   EXTRA LUXURY DETAILS
-   ========================= */
 
 .service-page-card{
   position:relative;
