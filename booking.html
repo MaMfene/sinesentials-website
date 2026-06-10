@@ -210,23 +210,15 @@ document.getElementById("bookingForm").addEventListener("submit", function(e) {
   const message = document.getElementById("message").value;
 
   const whatsappMessage =
-`🧹 *NEW BOOKING REQUEST*
-
-👤 Name: ${fullName}
-
-📞 Phone: ${phone}
-
-📧 Email: ${email}
-
-🧹 Service: ${service}
-
-📅 Date: ${bookingDate}
-
-📍 Location: ${location}
-
-💳 Payment: ${paymentMethod}
-
-📝 Details:
+` *NEW BOOKING REQUEST*
+Name: ${fullName}
+Phone: ${phone}
+Email: ${email}
+Service: ${service}
+Date: ${bookingDate}
+Location: ${location}
+Payment: ${paymentMethod}
+Details:
 ${message}`;
 
   const whatsappURL =
