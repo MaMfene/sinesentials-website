@@ -1,125 +1,125 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Sinesentials | Home</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-  <!-- Font Awesome (ADD THIS LINE) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101D3A">
+  <title>Our Cleaning Services | Sinesentials</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Your CSS -->
-  <link rel="stylesheet" href="style.css" />
-  <script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
-  <script>
-const menuToggle =
-document.getElementById("menuToggle");
-
-const mobileNav =
-document.getElementById("mobileNav");
-
-menuToggle.addEventListener("click", () => {
-  mobileNav.classList.toggle("active");
-});
-</script>
 <body>
   <div class="site-shell">
     <header class="topbar">
-      <div class="brand">
-        <img src="logo.jpeg" alt="Sinesentials logo" class="logo-img" />
+      <a class="brand" href="index.html">
+        <img src="logo.jpeg" alt="Sinesentials logo" class="logo-img">
         <span>Sinesentials</span>
-      </div>
+      </a>
 
-      <button class="menu-toggle" id="menuToggle">
-  <i class="fas fa-bars"></i>
-</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
 
-<nav class="nav" id="mobileNav">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="contact.html">Contact</a>
-</nav>
+      <nav class="nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </nav>
 
       <div class="topbar-right">
         <a href="tel:+27716283009" class="phone-link">071 628 3009</a>
-        <a href="contact.html" class="book-btn">Book Now</a>
+        <a href="booking.html" class="book-btn">Book Now <i class="fas fa-arrow-right"></i></a>
       </div>
     </header>
 
     <main class="page-main">
       <section class="page-hero">
-        <p class="eyebrow">OUR SERVICES</p>
-        <h1 class="page-title">Cleaning made for different spaces and needs.</h1>
+        <span class="eyebrow"><i class="fas fa-sparkles"></i> WHAT WE DO</span>
+        <h1 class="page-title">A cleaner space.<br><span> A fresher feeling.</span></h1>
         <p class="page-subtext">
-          We offer practical, high-quality cleaning services for student living,
-          homes, offices, and special cleanup needs.
+          From student accommodation to offices and event cleanups,
+          we make keeping your space fresh and tidy easier.
         </p>
       </section>
 
       <section class="services-page-grid">
         <article class="service-page-card">
-          <h2>Student Rooms & Flats</h2>
-          <p>
-            Designed for student accommodation and smaller living spaces that need
-            a thorough, affordable clean.
-          </p>
+          <div class="service-icon"><i class="fas fa-house-user"></i></div>
+          <span class="service-number">01</span>
+          <h2>Student Rooms &amp; Flats</h2>
+          <p>Designed for student accommodation and smaller living spaces that need a thorough, affordable clean.</p>
+          <a href="booking.html?service=Student%20Rooms" class="service-link">Book this service <i class="fas fa-arrow-right"></i></a>
         </article>
 
         <article class="service-page-card">
-          <h2>Carpets & Rugs</h2>
-          <p>
-            We offer high-quality carpet and rug cleaning services designed to remove dirt, tough stains, and unpleasant odour.
-          </p>
+          <div class="service-icon"><i class="fas fa-couch"></i></div>
+          <span class="service-number">02</span>
+          <h2>Carpets &amp; Rugs</h2>
+          <p>Carpet and rug cleaning designed to help remove dirt, tough stains and unpleasant odours.</p>
+          <a href="booking.html?service=Carpets%20%26%20Rugs" class="service-link">Book this service <i class="fas fa-arrow-right"></i></a>
         </article>
 
         <article class="service-page-card">
+          <div class="service-icon"><i class="fas fa-champagne-glasses"></i></div>
+          <span class="service-number">03</span>
           <h2>After-Party Cleanups</h2>
-          <p>
-            Quick and effective post-event cleaning so you can recover without the stress.
-          </p>
+          <p>Quick and effective post-event cleaning, so you can recover without the mess and stress.</p>
+          <a href="booking.html?service=After-Party%20Cleanups" class="service-link">Book this service <i class="fas fa-arrow-right"></i></a>
         </article>
 
         <article class="service-page-card">
+          <div class="service-icon"><i class="fas fa-key"></i></div>
+          <span class="service-number">04</span>
           <h2>End-of-Lease Deep Clean</h2>
-          <p>
-            Detailed move-out cleaning to leave the property spotless and ready for inspection.
-          </p>
+          <p>Detailed move-out cleaning to leave your property looking fresh and ready for inspection.</p>
+          <a href="booking.html?service=End-of-Lease%20Deep%20Clean" class="service-link">Book this service <i class="fas fa-arrow-right"></i></a>
         </article>
 
         <article class="service-page-card">
+          <div class="service-icon"><i class="fas fa-building"></i></div>
+          <span class="service-number">05</span>
           <h2>Office Cleaning</h2>
-          <p>
-            Professional cleaning services that keep workspaces neat, fresh, and welcoming.
-          </p>
+          <p>Professional cleaning to help keep workspaces neat, fresh and welcoming.</p>
+          <a href="booking.html?service=Office%20Cleaning" class="service-link">Book this service <i class="fas fa-arrow-right"></i></a>
         </article>
       </section>
+
+      <section class="page-cta">
+        <div>
+          <span class="eyebrow">READY FOR A FRESH START?</span>
+          <h2>Let's make your space shine.</h2>
+          <p>Choose a service and book your cleaning with Sinesentials.</p>
+        </div>
+        <a href="booking.html" class="book-btn">Book a Cleaning <i class="fas fa-arrow-right"></i></a>
+      </section>
     </main>
-      <footer>
-  <p>&copy; 2026 Sinesentials. All rights reserved.</p>
 
-  <div class="socials">
-    <a href="https://www.tiktok.com/@Sinesentials" target="_blank">
-      <i class="fab fa-tiktok"></i>
-    </a>
-
-    <a href="https://www.instagram.com/Sinesentials" target="_blank">
-      <i class="fab fa-instagram"></i>
-    </a>
-
-    <a href="https://www.facebook.com/" target="_blank">
-      <i class="fab fa-facebook-f"></i>
-    </a>
+    <footer class="site-footer">
+      <p>&copy; 2026 Sinesentials. All rights reserved.</p>
+      <div class="socials">
+        <a href="https://www.tiktok.com/@Sinesentials" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/Sinesentials" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </footer>
   </div>
-</footer>
-  </div>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileNav = document.getElementById("mobileNav");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mobileNav.classList.toggle("active");
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.innerHTML = isOpen
+        ? '<i class="fas fa-times"></i>'
+        : '<i class="fas fa-bars"></i>';
+    });
+  </script>
 </body>
 </html>
