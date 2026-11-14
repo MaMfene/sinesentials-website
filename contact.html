@@ -1,126 +1,136 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Sinesentials | Home</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-  <!-- Font Awesome (ADD THIS LINE) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101D3A">
+  <title>Contact Us | Sinesentials</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Your CSS -->
-  <link rel="stylesheet" href="style.css" />
-  <script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
-  <script>
-const menuToggle =
-document.getElementById("menuToggle");
-
-const mobileNav =
-document.getElementById("mobileNav");
-
-menuToggle.addEventListener("click", () => {
-  mobileNav.classList.toggle("active");
-});
-</script>
 <body>
   <div class="site-shell">
     <header class="topbar">
-      <div class="brand">
-        <img src="logo.jpeg" alt="Sinessentials logo" class="logo-img" />
+      <a class="brand" href="index.html">
+        <img src="logo.jpeg" alt="Sinesentials logo" class="logo-img">
         <span>Sinesentials</span>
-      </div>
+      </a>
 
-      <button class="menu-toggle" id="menuToggle">
-  <i class="fas fa-bars"></i>
-</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
 
-<nav class="nav" id="mobileNav">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="contact.html">Contact</a>
-</nav>
+      <nav class="nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
 
       <div class="topbar-right">
         <a href="tel:+27716283009" class="phone-link">071 628 3009</a>
-        <a href="contact.html" class="book-btn">Book Now</a>
+        <a href="booking.html" class="book-btn">Book Now <i class="fas fa-arrow-right"></i></a>
       </div>
     </header>
 
     <main class="page-main">
       <section class="page-hero">
-        <p class="eyebrow">CONTACT</p>
-        <h1 class="page-title">Let’s get your space looking its best.</h1>
+        <span class="eyebrow"><i class="fas fa-comments"></i> GET IN TOUCH</span>
+        <h1 class="page-title">Let's talk about<br><span>a cleaner space.</span></h1>
         <p class="page-subtext">
-          Reach out for bookings, questions, or a quick Whatsapp message.
+          Have a question or ready to book? We'd love to hear from you.
+          Choose the easiest way to get in touch.
         </p>
       </section>
 
       <section class="contact-page-grid">
-        <div class="contact-page-card blue-card">
-          <div class="contact-top">
-            <h2>Contact Us</h2>
-            <div class="contact-icon">✉</div>
+        <article class="contact-page-card contact-primary">
+          <div class="contact-card-top">
+            <div class="contact-icon"><i class="fas fa-phone-volume"></i></div>
+            <span class="contact-tag">WE'RE HERE TO HELP</span>
           </div>
-
+          <h2>Contact Sinesentials</h2>
           <p class="contact-copy">
-            Ready for a spotless environment? Reach out to us via call or message today.
+            Get in touch for bookings, service enquiries or any questions
+            about keeping your space clean and fresh.
           </p>
 
           <div class="contact-call-box">
-            <span>CALL OR WHATSAPP</span>
+            <span>CALL US</span>
             <a href="tel:+27716283009">071 628 3009</a>
           </div>
 
-          <a href="https://wa.me/27716283009" target="_blank" class="message-btn">
-            Send a Message
+          <a href="https://wa.me/27716283009" target="_blank" rel="noopener noreferrer" class="message-btn">
+            <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
           </a>
+        </article>
+
+        <article class="contact-page-card contact-details">
+          <span class="eyebrow">OTHER DETAILS</span>
+          <h2>We're just a message away.</h2>
+
+          <div class="contact-info-block">
+            <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h3>Email</h3>
+              <a href="mailto:sinesentials@gmail.com">sinesentials@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-info-block">
+            <div class="contact-detail-icon"><i class="fas fa-location-dot"></i></div>
+            <div>
+              <h3>Location</h3>
+              <p>Potchefstroom, South Africa</p>
+            </div>
+          </div>
+
+          <div class="contact-info-block">
+            <div class="contact-detail-icon"><i class="fas fa-calendar-check"></i></div>
+            <div>
+              <h3>Availability</h3>
+              <p>Monday – Saturday</p>
+              <span>By appointment / booking only</span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="page-cta">
+        <div>
+          <span class="eyebrow">LET'S GET STARTED</span>
+          <h2>Your space deserves a fresh start.</h2>
+          <p>Make your booking online and we'll be in touch.</p>
         </div>
-
-        <div class="contact-page-card light-card">
-          <h2>Email & Location</h2>
-          <div class="contact-info-block">
-            <h3>Email</h3>
-            <p><a href="mailto:sinesentials@gmail.com">sinesentials@gmail.com</a></p>
-          </div>
-
-          <div class="contact-info-block">
-            <h3>Location</h3>
-            <p>Potchefstroom, South Africa</p>
-          </div>
-
-          <div class="contact-info-block">
-            <h3>Availability</h3>
-            <p>Monday - Saturday: By appointment/booking only.</p>
-          </div>
-        </div>
+        <a href="booking.html" class="book-btn">Book a Cleaning <i class="fas fa-arrow-right"></i></a>
       </section>
     </main>
-     <footer>
-  <p>&copy; 2026 Sinesentials. All rights reserved.</p>
 
-  <div class="socials">
-    <a href="https://www.tiktok.com/@Sinesentials" target="_blank">
-      <i class="fab fa-tiktok"></i>
-    </a>
-
-    <a href="https://www.instagram.com/Sinesentials" target="_blank">
-      <i class="fab fa-instagram"></i>
-    </a>
-
-    <a href="https://www.facebook.com/" target="_blank">
-      <i class="fab fa-facebook-f"></i>
-    </a>
+    <footer class="site-footer">
+      <p>&copy; 2026 Sinesentials. All rights reserved.</p>
+      <div class="socials">
+        <a href="https://www.tiktok.com/@Sinesentials" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/Sinesentials" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </footer>
   </div>
-</footer>
-  </div>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileNav = document.getElementById("mobileNav");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mobileNav.classList.toggle("active");
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.innerHTML = isOpen
+        ? '<i class="fas fa-times"></i>'
+        : '<i class="fas fa-bars"></i>';
+    });
+  </script>
 </body>
 </html>
