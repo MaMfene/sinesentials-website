@@ -1,162 +1,178 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Sinesentials | Home</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-  <!-- Font Awesome (ADD THIS LINE) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101D3A">
+  <title>Pricing | Sinesentials</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Your CSS -->
-  <link rel="stylesheet" href="style.css" />
-  <script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
-  <script>
-const menuToggle =
-document.getElementById("menuToggle");
-
-const mobileNav =
-document.getElementById("mobileNav");
-
-menuToggle.addEventListener("click", () => {
-  mobileNav.classList.toggle("active");
-});
-</script>
 <body>
   <div class="site-shell">
     <header class="topbar">
-      <div class="brand">
-        <img src="logo.jpeg" alt="Sinessentials logo" class="logo-img" />
+      <a class="brand" href="index.html">
+        <img src="logo.jpeg" alt="Sinesentials logo" class="logo-img">
         <span>Sinesentials</span>
-      </div>
+      </a>
 
-      <button class="menu-toggle" id="menuToggle">
-  <i class="fas fa-bars"></i>
-</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
 
-<nav class="nav" id="mobileNav">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="contact.html">Contact</a>
-</nav>
+      <nav class="nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html" class="active">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </nav>
 
       <div class="topbar-right">
         <a href="tel:+27716283009" class="phone-link">071 628 3009</a>
-        <a href="contact.html" class="book-btn">Book Now</a>
+        <a href="booking.html" class="book-btn">Book Now <i class="fas fa-arrow-right"></i></a>
       </div>
     </header>
 
     <main class="page-main">
       <section class="page-hero">
-        <p class="eyebrow">PRICING</p>
-        <h1 class="page-title">Transparent rates for every type of clean.</h1>
+        <span class="eyebrow"><i class="fas fa-tags"></i> SIMPLE &amp; CLEAR PRICING</span>
+        <h1 class="page-title">A fresh space<br><span>at the right price.</span></h1>
         <p class="page-subtext">
-          Simple pricing for student rooms, homes, offices, and large venue cleanups.
+          Explore our cleaning rates and choose the service that suits
+          your space and your needs.
         </p>
       </section>
 
-     <section class="rates-section desktop-rates">
-  <div class="card-title-row">
-    <h2>Price List</h2>
-  </div>
+      <section class="rates-section">
+        <div class="pricing-heading">
+          <div>
+            <span class="eyebrow">OUR RATES</span>
+            <h2>Choose your cleaning service</h2>
+            <p>Select a service to continue to the booking form.</p>
+          </div>
+          <div class="pricing-heading-icon"><i class="fas fa-receipt"></i></div>
+        </div>
 
-  <p class="rates-subtext">
-    Select a service below to continue to the booking form.
-  </p>
+        <div class="pricing-cards">
+          <a class="pricing-card" href="booking.html?service=Student%20Rooms">
+            <div class="pricing-card-icon"><i class="fas fa-house-user"></i></div>
+            <div class="pricing-card-info">
+              <h3>Student Rooms</h3>
+              <p>Ideal for student accommodation.</p>
+            </div>
+            <div class="pricing-amount"><span>From</span><strong>R250</strong></div>
+            <span class="pricing-arrow"><i class="fas fa-arrow-right"></i></span>
+          </a>
 
-  <div class="pricing-cards">
-    <a class="pricing-card" href="booking.html?service=Student%20Rooms">
-      <div>
-        <h3>Student Rooms</h3>
-        <p>Ideal for student accommodation</p>
-      </div>
-      <span>R250</span>
-    </a>
+          <a class="pricing-card" href="booking.html?service=1-Bedroom%20Apartment">
+            <div class="pricing-card-icon"><i class="fas fa-door-open"></i></div>
+            <div class="pricing-card-info">
+              <h3>1-Bedroom Apartment</h3>
+              <p>Perfect for smaller apartments.</p>
+            </div>
+            <div class="pricing-amount"><span>From</span><strong>R550</strong></div>
+            <span class="pricing-arrow"><i class="fas fa-arrow-right"></i></span>
+          </a>
 
-    <a class="pricing-card" href="booking.html?service=1-Bedroom%20Apartment">
-      <div>
-        <h3>1-Bedroom Apartment</h3>
-        <p>Perfect for smaller apartments</p>
-      </div>
-      <span>R550</span>
-    </a>
+          <a class="pricing-card" href="booking.html?service=2-Bedroom%20House">
+            <div class="pricing-card-icon"><i class="fas fa-house"></i></div>
+            <div class="pricing-card-info">
+              <h3>2-Bedroom House</h3>
+              <p>Suitable for medium-sized homes.</p>
+            </div>
+            <div class="pricing-amount"><span>From</span><strong>R650</strong></div>
+            <span class="pricing-arrow"><i class="fas fa-arrow-right"></i></span>
+          </a>
 
-    <a class="pricing-card" href="booking.html?service=2-Bedroom%20House">
-      <div>
-        <h3>2-Bedroom House</h3>
-        <p>Suitable for medium-sized homes</p>
-      </div>
-      <span>R650</span>
-    </a>
+          <a class="pricing-card" href="booking.html?service=3%2B%20Bedroom%20House">
+            <div class="pricing-card-icon"><i class="fas fa-house-chimney"></i></div>
+            <div class="pricing-card-info">
+              <h3>3+ Bedroom House</h3>
+              <p>Full-home deep cleaning.</p>
+            </div>
+            <div class="pricing-amount"><span>From</span><strong>R1,000</strong></div>
+            <span class="pricing-arrow"><i class="fas fa-arrow-right"></i></span>
+          </a>
 
-    <a class="pricing-card" href="booking.html?service=3%2B%20Bedroom%20House">
-      <div>
-        <h3>3+ Bedroom House</h3>
-        <p>Full-home deep cleaning</p>
-      </div>
-      <span>R1,000</span>
-    </a>
+          <a class="pricing-card" href="booking.html?service=After-Party%20Cleanups">
+            <div class="pricing-card-icon"><i class="fas fa-champagne-glasses"></i></div>
+            <div class="pricing-card-info">
+              <h3>After-Party Cleanups</h3>
+              <p>Fast post-event cleaning.</p>
+            </div>
+            <div class="pricing-amount"><span>From</span><strong>R350</strong></div>
+            <span class="pricing-arrow"><i class="fas fa-arrow-right"></i></span>
+          </a>
 
-    <a class="pricing-card" href="booking.html?service=After-Party%20Cleanups">
-      <div>
-        <h3>After-Party Cleanups</h3>
-        <p>Fast post-event cleaning</p>
-      </div>
-      <span>R350</span>
-    </a>
+          <a class="pricing-card" href="booking.html?service=Large%20Venue">
+            <div class="pricing-card-icon"><i class="fas fa-warehouse"></i></div>
+            <div class="pricing-card-info">
+              <h3>Large Venue</h3>
+              <p>For bigger spaces and event venues.</p>
+            </div>
+            <div class="pricing-amount"><span>From</span><strong>R750</strong></div>
+            <span class="pricing-arrow"><i class="fas fa-arrow-right"></i></span>
+          </a>
 
-    <a class="pricing-card" href="booking.html?service=Large%20Venue">
-      <div>
-        <h3>Large Venue</h3>
-        <p>For bigger spaces and event venues</p>
-      </div>
-      <span>R750</span>
-    </a>
+          <a class="pricing-card" href="booking.html?service=Office%20Cleaning">
+            <div class="pricing-card-icon"><i class="fas fa-building"></i></div>
+            <div class="pricing-card-info">
+              <h3>Office Cleaning</h3>
+              <p>Professional workspace cleaning.</p>
+            </div>
+            <div class="pricing-amount"><span>From</span><strong>R500</strong></div>
+            <span class="pricing-arrow"><i class="fas fa-arrow-right"></i></span>
+          </a>
 
-    <a class="pricing-card" href="booking.html?service=Office%20Cleaning">
-      <div>
-        <h3>Office Cleaning</h3>
-        <p>Professional workspace cleaning</p>
-      </div>
-      <span>R500</span>
-    </a>
+          <a class="pricing-card" href="booking.html?service=Add-Ons">
+            <div class="pricing-card-icon"><i class="fas fa-plus-circle"></i></div>
+            <div class="pricing-card-info">
+              <h3>Add-Ons (Optional)</h3>
+              <p>Extra cleaning services.</p>
+            </div>
+            <div class="pricing-amount"><span>From</span><strong>R70</strong></div>
+            <span class="pricing-arrow"><i class="fas fa-arrow-right"></i></span>
+          </a>
+        </div>
 
-    <a class="pricing-card" href="booking.html?service=Add-Ons">
-      <div>
-        <h3>Add-Ons (Optional)</h3>
-        <p>Extra cleaning services</p>
-      </div>
-      <span>R70</span>
-    </a>
-  </div>
-</section>
+        <p class="pricing-note"><i class="fas fa-circle-info"></i> Prices shown are the rates supplied for each service. Contact us if you need help choosing the right option.</p>
+      </section>
+
+      <section class="page-cta">
+        <div>
+          <span class="eyebrow">YOUR CLEAN SPACE STARTS HERE</span>
+          <h2>Ready to make a booking?</h2>
+          <p>Choose your service and tell us what you need.</p>
+        </div>
+        <a href="booking.html" class="book-btn">Book Now <i class="fas fa-arrow-right"></i></a>
+      </section>
     </main>
-      <footer>
-  <p>&copy; 2026 Sinesentials. All rights reserved.</p>
 
-  <div class="socials">
-    <a href="https://www.tiktok.com/@Sinesentials" target="_blank">
-      <i class="fab fa-tiktok"></i>
-    </a>
-
-    <a href="https://www.instagram.com/Sinesentials" target="_blank">
-      <i class="fab fa-instagram"></i>
-    </a>
-
-    <a href="https://www.facebook.com/" target="_blank">
-      <i class="fab fa-facebook-f"></i>
-    </a>
+    <footer class="site-footer">
+      <p>&copy; 2026 Sinesentials. All rights reserved.</p>
+      <div class="socials">
+        <a href="https://www.tiktok.com/@Sinesentials" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/Sinesentials" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </footer>
   </div>
-</footer>
-  </div>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileNav = document.getElementById("mobileNav");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mobileNav.classList.toggle("active");
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.innerHTML = isOpen
+        ? '<i class="fas fa-times"></i>'
+        : '<i class="fas fa-bars"></i>';
+    });
+  </script>
 </body>
 </html>
