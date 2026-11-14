@@ -4,707 +4,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinesentials | We'll Be Back Soon</title>
 
-    <title>Sinesentials | Professional Cleaning Services</title>
-
-    <meta name="description" content="Sinesentials offers professional and affordable cleaning services in Potchefstroom. Book your cleaning service today.">
-
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-        :root {
-            --primary: #0F4CDB;
-            --navy: #081B4B;
-            --green: #239B68;
-            --white: #FFFFFF;
-            --light: #F5F8FF;
-            --text: #26334D;
-            --muted: #71809B;
-        }
-
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            box-sizing: border-box;
         }
 
         body {
             font-family: 'Manrope', sans-serif;
-            color: var(--text);
-            background: var(--white);
-            line-height: 1.7;
+            background: #F5F8FF;
+            color: #081B4B;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
         }
 
-        a {
-            text-decoration: none;
-        }
-
-        .site-header {
+        .page {
             width: 100%;
-            background: rgba(255,255,255,0.97);
-            border-bottom: 1px solid #E8EDF6;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(12px);
+            max-width: 760px;
+            background: #FFFFFF;
+            border-radius: 22px;
+            padding: 55px 35px;
+            text-align: center;
+            box-shadow: 0 20px 65px rgba(8, 27, 75, 0.09);
+            border: 1px solid #E8EDF6;
         }
 
-        .header-inner {
-            max-width: 1200px;
-            margin: auto;
-            padding: 12px 5%;
-            min-height: 88px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 25px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            flex-shrink: 0;
-        }
-
-        .logo-img {
-            display: block;
-            width: 155px;
-            height: 70px;
+        .logo {
+            width: 175px;
+            height: 90px;
             object-fit: contain;
-            object-position: left center;
+            margin-bottom: 30px;
             mix-blend-mode: multiply;
-            transition: transform 0.3s ease;
         }
 
-        .brand:hover .logo-img {
-            transform: scale(1.025);
-        }
-
-        .site-menu {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .site-menu a {
-            color: var(--navy);
-            font-size: 13px;
-            font-weight: 700;
-            transition: color 0.25s ease;
-        }
-
-        .site-menu a:hover {
-            color: var(--primary);
-        }
-
-        .site-menu .nav-book {
-            background: var(--primary);
-            color: white;
-            padding: 12px 22px;
-            border-radius: 9px;
-            box-shadow: 0 7px 18px rgba(15,76,219,0.17);
-        }
-
-        .site-menu .nav-book:hover {
-            background: var(--navy);
-            color: white;
-        }
-
-        .menu-toggle {
-            display: none;
-            border: none;
-            background: none;
-            color: var(--navy);
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .hero-section {
-            background:
-                radial-gradient(circle at 85% 15%, rgba(79,134,255,0.16), transparent 30%),
-                linear-gradient(135deg, #F5F8FF 0%, #FFFFFF 60%, #F0F6FF 100%);
-            padding: 95px 5% 100px;
-            overflow: hidden;
-        }
-
-        .hero-inner {
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            align-items: center;
-            gap: 65px;
-        }
-
-        .eyebrow {
+        .status {
             display: inline-flex;
             align-items: center;
             gap: 9px;
-            color: var(--green);
             background: #EAF7F0;
-            padding: 8px 15px;
+            color: #239B68;
+            padding: 9px 17px;
             border-radius: 50px;
             font-size: 12px;
             font-weight: 800;
-            letter-spacing: 0.5px;
-            margin-bottom: 22px;
+            margin-bottom: 25px;
         }
 
-        .hero-copy h1 {
-            color: var(--navy);
-            font-size: clamp(38px, 5vw, 62px);
-            line-height: 1.13;
-            letter-spacing: -2px;
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #239B68;
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-size: clamp(34px, 6vw, 49px);
+            line-height: 1.2;
             font-weight: 800;
-            margin-bottom: 24px;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
         }
 
-        .hero-copy h1 span {
-            color: var(--primary);
+        h1 span {
+            color: #0F4CDB;
         }
 
-        .hero-copy p {
-            max-width: 570px;
-            color: var(--muted);
-            font-size: 16px;
+        .message {
+            color: #71809B;
+            font-size: 15px;
             line-height: 1.9;
-            margin-bottom: 32px;
+            max-width: 540px;
+            margin: 0 auto 30px;
         }
 
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 15px;
+        .divider {
+            width: 55px;
+            height: 4px;
+            background: #239B68;
+            border-radius: 10px;
+            margin: 0 auto 28px;
         }
 
-        .btn-primary,
-        .btn-secondary {
+        .contact {
+            background: #F5F8FF;
+            border-radius: 14px;
+            padding: 23px;
+            margin-top: 30px;
+        }
+
+        .contact h2 {
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .contact p {
+            color: #71809B;
+            font-size: 13px;
+            margin-bottom: 16px;
+        }
+
+        .whatsapp {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            padding: 15px 25px;
+            background: #239B68;
+            color: white;
+            padding: 13px 23px;
             border-radius: 9px;
             font-size: 13px;
             font-weight: 800;
-            transition: all 0.25s ease;
+            text-decoration: none;
+            transition: 0.3s;
         }
 
-        .btn-primary {
-            color: white;
-            background: var(--primary);
-            box-shadow: 0 9px 22px rgba(15,76,219,0.2);
-        }
-
-        .btn-primary:hover {
-            background: var(--navy);
-            transform: translateY(-3px);
-        }
-
-        .btn-secondary {
-            color: var(--navy);
-            border: 1px solid #D9E2F2;
-            background: white;
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .hero-visual {
-            position: relative;
-            min-height: 390px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .visual-card {
-            width: 100%;
-            max-width: 430px;
-            min-height: 340px;
-            padding: 45px 35px;
-            border-radius: 25px;
-            background: white;
-            box-shadow: 0 25px 70px rgba(8,27,75,0.12);
-            border: 1px solid #EDF1F8;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .visual-card::before {
-            content: "";
-            position: absolute;
-            width: 220px;
-            height: 220px;
-            background: #EAF1FF;
-            border-radius: 50%;
-            top: -100px;
-            right: -80px;
-        }
-
-        .visual-icon {
-            position: relative;
-            width: 78px;
-            height: 78px;
-            border-radius: 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 33px;
-            background: linear-gradient(135deg, var(--primary), #4F86FF);
-            margin-bottom: 30px;
-            box-shadow: 0 12px 25px rgba(15,76,219,0.2);
-        }
-
-        .visual-card h2 {
-            position: relative;
-            color: var(--navy);
-            font-size: 25px;
-            line-height: 1.35;
-            margin-bottom: 14px;
-        }
-
-        .visual-card p {
-            position: relative;
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .visual-check {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 22px;
-            color: var(--green);
-            font-size: 13px;
-            font-weight: 800;
-        }
-
-        .trust-strip {
-            background: white;
-            border-bottom: 1px solid #EDF1F7;
-            padding: 25px 5%;
-        }
-
-        .trust-inner {
-            max-width: 1100px;
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 45px;
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 11px;
-            color: var(--navy);
-            font-size: 13px;
-            font-weight: 800;
-        }
-
-        .trust-item i {
-            color: var(--green);
-            font-size: 19px;
-        }
-
-        .section {
-            padding: 90px 5%;
-        }
-
-        .section-inner {
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .section-heading {
-            text-align: center;
-            max-width: 650px;
-            margin: 0 auto 50px;
-        }
-
-        .section-heading .small-title {
-            color: var(--green);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        .section-heading h2 {
-            color: var(--navy);
-            font-size: clamp(29px, 4vw, 42px);
-            line-height: 1.25;
-            margin: 12px 0;
-            font-weight: 800;
-        }
-
-        .section-heading p {
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 23px;
-        }
-
-        .service-card {
-            padding: 30px;
-            background: white;
-            border: 1px solid #E8EDF5;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(8,27,75,0.045);
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-6px);
-            border-color: #C9D9FF;
-            box-shadow: 0 18px 40px rgba(8,27,75,0.09);
-        }
-
-        .service-icon {
-            width: 57px;
-            height: 57px;
-            border-radius: 15px;
-            background: #EDF3FF;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 23px;
-            margin-bottom: 23px;
-        }
-
-        .service-card h3 {
-            color: var(--navy);
-            font-size: 18px;
-            margin-bottom: 11px;
-        }
-
-        .service-card p {
-            color: var(--muted);
-            font-size: 13px;
-            line-height: 1.8;
-            margin-bottom: 18px;
-        }
-
-        .service-card a {
-            color: var(--primary);
-            font-size: 12px;
-            font-weight: 800;
-        }
-
-        .service-card a:hover {
-            color: var(--green);
-        }
-
-        .about-section {
-            background: var(--light);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
-            align-items: center;
-        }
-
-        .about-panel {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 45px rgba(8,27,75,0.06);
-            border: 1px solid #E9EEF7;
-        }
-
-        .about-panel i {
-            font-size: 35px;
-            color: var(--green);
-            margin-bottom: 20px;
-        }
-
-        .about-panel h3 {
-            color: var(--navy);
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-
-        .about-panel p {
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .about-copy .small-title {
-            color: var(--green);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        .about-copy h2 {
-            color: var(--navy);
-            font-size: clamp(29px, 4vw, 40px);
-            line-height: 1.25;
-            margin: 14px 0 20px;
-        }
-
-        .about-copy p {
-            color: var(--muted);
-            font-size: 14px;
-            margin-bottom: 22px;
-        }
-
-        .about-list {
-            list-style: none;
-            display: grid;
-            gap: 14px;
-        }
-
-        .about-list li {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--navy);
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-        .about-list i {
-            color: var(--green);
-        }
-
-        .booking-banner {
-            padding: 75px 5%;
-            background: linear-gradient(120deg, var(--navy), #123D91);
-            color: white;
-            text-align: center;
-        }
-
-        .booking-banner h2 {
-            font-size: clamp(29px, 4vw, 42px);
-            margin-bottom: 15px;
-        }
-
-        .booking-banner p {
-            max-width: 620px;
-            margin: 0 auto 28px;
-            color: #D8E4FF;
-            font-size: 14px;
-        }
-
-        .booking-banner .btn-primary {
-            background: var(--green);
-            box-shadow: none;
-        }
-
-        .booking-banner .btn-primary:hover {
+        .whatsapp:hover {
             background: #197D53;
+            transform: translateY(-2px);
         }
 
-        .site-footer {
-            background: #061638;
-            color: white;
-            padding: 55px 5% 25px;
+        .footer {
+            margin-top: 35px;
+            color: #9AA6BA;
+            font-size: 11px;
         }
 
-        .footer-inner {
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1.4fr 1fr 1fr;
-            gap: 55px;
-            padding-bottom: 40px;
-        }
-
-        .footer-brand {
-            display: inline-flex;
-            background: white;
-            padding: 7px 12px;
-            border-radius: 10px;
-            margin-bottom: 18px;
-        }
-
-        .footer-brand img {
-            width: 135px;
-            height: 55px;
-            object-fit: contain;
-            mix-blend-mode: multiply;
-        }
-
-        .footer-description {
-            max-width: 340px;
-            color: #B7C5DF;
-            font-size: 13px;
-        }
-
-        .footer-column h3 {
-            font-size: 15px;
-            margin-bottom: 20px;
-        }
-
-        .footer-column a,
-        .footer-column p {
-            display: block;
-            color: #B7C5DF;
-            font-size: 13px;
-            margin-bottom: 12px;
-            transition: color 0.2s ease;
-        }
-
-        .footer-column a:hover {
-            color: #70A0FF;
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: auto;
-            padding-top: 22px;
-            border-top: 1px solid rgba(255,255,255,0.13);
-            color: #9EACC5;
-            font-size: 12px;
-            text-align: center;
-        }
-
-        @media (max-width: 900px) {
-            .hero-inner {
-                grid-template-columns: 1fr;
-                gap: 35px;
+        @media (max-width: 480px) {
+            .page {
+                padding: 40px 22px;
             }
 
-            .hero-copy {
-                text-align: center;
-            }
-
-            .hero-copy p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-actions {
-                justify-content: center;
-            }
-
-            .hero-visual {
-                min-height: 330px;
-            }
-
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .about-grid {
-                gap: 35px;
-            }
-        }
-
-        @media (max-width: 650px) {
-            .header-inner {
-                min-height: 75px;
-            }
-
-            .logo-img {
-                width: 130px;
-                height: 58px;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .site-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                padding: 22px 5% 28px;
-                background: white;
-                border-top: 1px solid #E8EDF6;
-                box-shadow: 0 15px 25px rgba(8,27,75,0.08);
-                flex-direction: column;
-                align-items: stretch;
-                gap: 18px;
-            }
-
-            .site-menu.active {
-                display: flex;
-            }
-
-            .site-menu a {
-                padding: 5px 0;
-            }
-
-            .site-menu .nav-book {
-                text-align: center;
-            }
-
-            .hero-section {
-                padding: 65px 6% 70px;
-            }
-
-            .hero-copy h1 {
-                letter-spacing: -1px;
-            }
-
-            .hero-visual {
-                min-height: 300px;
-            }
-
-            .visual-card {
-                min-height: 290px;
-                padding: 30px 25px;
-            }
-
-            .trust-inner {
-                gap: 20px;
-                justify-content: flex-start;
-            }
-
-            .trust-item {
-                width: 100%;
-            }
-
-            .section {
-                padding: 65px 6%;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-panel {
-                padding: 30px;
-            }
-
-            .footer-inner {
-                grid-template-columns: 1fr;
-                gap: 30px;
+            .logo {
+                width: 150px;
             }
         }
     </style>
@@ -712,425 +152,51 @@
 
 <body>
 
-    <!-- HEADER -->
-    <header class="site-header">
-        <div class="header-inner">
+    <main class="page">
 
-            <a href="index.html" class="brand" aria-label="Sinesentials homepage">
-                <img src="logo.jpeg" alt="Sinesentials Logo" class="logo-img">
-            </a>
+        <img src="logo.jpeg" alt="Sinesentials Logo" class="logo">
 
-            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <nav class="site-menu" id="siteMenu">
-                <a href="index.html">Home</a>
-                <a href="services.html">Services</a>
-                <a href="pricing.html">Pricing</a>
-                <a href="contact.html">Contact</a>
-                <a href="booking.html" class="nav-book">Book a Service</a>
-            </nav>
-
+        <div class="status">
+            <span class="status-dot"></span>
+            TEMPORARILY UNAVAILABLE
         </div>
-    </header>
 
+        <h1>
+            We'll Be Back <span>Soon.</span>
+        </h1>
 
-    <!-- HERO SECTION -->
-    <main>
+        <div class="divider"></div>
 
-        <section class="hero-section">
-            <div class="hero-inner">
+        <p class="message">
+            Hello, valued customers!
 
-                <div class="hero-copy">
+            Sinesentials is temporarily unavailable while we work behind
+            the scenes. We're taking a little time to prepare for what's
+            next, and we look forward to serving you again soon.
 
-                    <span class="eyebrow">
-                        <i class="fas fa-sparkles"></i>
-                        CLEAN SPACES. FRESH FEELINGS.
-                    </span>
+            Thank you for your patience, continued support and understanding.
+            We can't wait to welcome you back!
+        </p>
 
-                    <h1>
-                        A Cleaner Space.<br>
-                        A <span>Better Feeling.</span>
-                    </h1>
-
-                    <p>
-                        Welcome to Sinesentials, your cleaning service in
-                        Potchefstroom. From student accommodation to homes,
-                        offices and special clean-ups, we help make your
-                        spaces feel fresh, neat and welcoming.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a href="booking.html" class="btn-primary">
-                            Book a Cleaning
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-
-                        <a href="services.html" class="btn-secondary">
-                            Explore Services
-                        </a>
-                    </div>
-
-                </div>
-
-
-                <div class="hero-visual">
-                    <div class="visual-card">
-
-                        <div class="visual-icon">
-                            <i class="fas fa-house-chimney"></i>
-                        </div>
-
-                        <h2>
-                            Your space deserves
-                            a fresh start.
-                        </h2>
-
-                        <p>
-                            Thoughtful cleaning services for everyday
-                            spaces and special occasions.
-                        </p>
-
-                        <div class="visual-check">
-                            <i class="fas fa-circle-check"></i>
-                            By appointment and booking only
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- TRUST STRIP -->
-        <section class="trust-strip">
-            <div class="trust-inner">
-
-                <div class="trust-item">
-                    <i class="fas fa-location-dot"></i>
-                    Potchefstroom
-                </div>
-
-                <div class="trust-item">
-                    <i class="fas fa-calendar-check"></i>
-                    Booking by appointment
-                </div>
-
-                <div class="trust-item">
-                    <i class="fas fa-clock"></i>
-                    Monday – Saturday
-                </div>
-
-                <div class="trust-item">
-                    <i class="fas fa-leaf"></i>
-                    Fresh, welcoming spaces
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- SERVICES SECTION -->
-        <section class="section">
-            <div class="section-inner">
-
-                <div class="section-heading">
-                    <span class="small-title">What We Do</span>
-
-                    <h2>Cleaning Services That Make a Difference</h2>
-
-                    <p>
-                        Whether you need a quick refresh or a more thorough
-                        clean, explore our range of cleaning services.
-                    </p>
-                </div>
-
-
-                <div class="services-grid">
-
-                    <article class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-bed"></i>
-                        </div>
-
-                        <h3>Student Rooms & Flats</h3>
-
-                        <p>
-                            Affordable, thorough cleaning for student
-                            accommodation and smaller living spaces.
-                        </p>
-
-                        <a href="booking.html?service=Student%20Rooms%20%26%20Flats">
-                            Book this service <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </article>
-
-
-                    <article class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-couch"></i>
-                        </div>
-
-                        <h3>Carpets & Rugs</h3>
-
-                        <p>
-                            Cleaning to help tackle dirt, tough stains
-                            and unpleasant odours.
-                        </p>
-
-                        <a href="booking.html?service=Carpets%20%26%20Rugs">
-                            Book this service <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </article>
-
-
-                    <article class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-champagne-glasses"></i>
-                        </div>
-
-                        <h3>After-Party Cleanups</h3>
-
-                        <p>
-                            Get your space back in order after a celebration,
-                            gathering or special event.
-                        </p>
-
-                        <a href="booking.html?service=After-Party%20Cleanups">
-                            Book this service <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </article>
-
-
-                    <article class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-key"></i>
-                        </div>
-
-                        <h3>End-of-Lease Deep Cleaning</h3>
-
-                        <p>
-                            A more thorough clean to help prepare a property
-                            for its next chapter.
-                        </p>
-
-                        <a href="booking.html?service=End-of-Lease%20Deep%20Cleaning">
-                            Book this service <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </article>
-
-
-                    <article class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-
-                        <h3>Office Cleaning</h3>
-
-                        <p>
-                            Keep your work environment neat, fresh
-                            and welcoming.
-                        </p>
-
-                        <a href="booking.html?service=Office%20Cleaning">
-                            Book this service <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </article>
-
-
-                    <article class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-spray-can-sparkles"></i>
-                        </div>
-
-                        <h3>Additional Cleaning</h3>
-
-                        <p>
-                            Have a specific cleaning requirement?
-                            Get in touch to discuss what you need.
-                        </p>
-
-                        <a href="contact.html">
-                            Contact us <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </article>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- ABOUT SECTION -->
-        <section class="section about-section">
-            <div class="section-inner">
-
-                <div class="about-grid">
-
-                    <div class="about-panel">
-                        <i class="fas fa-house-circle-check"></i>
-
-                        <h3>More Than Just Cleaning</h3>
-
-                        <p>
-                            A clean space can make a real difference to how
-                            you live, work and feel. At Sinesentials, our aim
-                            is to make arranging a cleaning service simple
-                            and convenient.
-                        </p>
-                    </div>
-
-
-                    <div class="about-copy">
-
-                        <span class="small-title">Why Sinesentials?</span>
-
-                        <h2>Making Clean Spaces Easier to Achieve</h2>
-
-                        <p>
-                            We offer a range of cleaning services designed
-                            around different spaces and needs. Whether it is
-                            your student room, home, office or event venue,
-                            you can get in touch and arrange a booking.
-                        </p>
-
-                        <ul class="about-list">
-                            <li>
-                                <i class="fas fa-circle-check"></i>
-                                A range of cleaning services
-                            </li>
-
-                            <li>
-                                <i class="fas fa-circle-check"></i>
-                                Convenient booking process
-                            </li>
-
-                            <li>
-                                <i class="fas fa-circle-check"></i>
-                                Services in Potchefstroom
-                            </li>
-
-                            <li>
-                                <i class="fas fa-circle-check"></i>
-                                Monday to Saturday availability
-                            </li>
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- BOOKING CALL TO ACTION -->
-        <section class="booking-banner">
-
-            <h2>Ready for a Fresher Space?</h2>
+        <div class="contact">
+            <h2>Need to get in touch?</h2>
 
             <p>
-                Let us know what needs cleaning. Get in touch with
-                Sinesentials and arrange your booking today.
+                For enquiries, please contact us directly on WhatsApp.
             </p>
 
-            <a href="booking.html" class="btn-primary">
-                Book Your Cleaning
-                <i class="fas fa-arrow-right"></i>
+            <a href="https://wa.me/27716283009" class="whatsapp" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i>
+                Contact Sinesentials
             </a>
+        </div>
 
-        </section>
+        <div class="footer">
+            © 2026 Sinesentials. All rights reserved.<br>
+            Potchefstroom, South Africa
+        </div>
 
     </main>
-
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-
-        <div class="footer-inner">
-
-            <div>
-                <a href="index.html" class="footer-brand">
-                    <img src="logo.jpeg" alt="Sinesentials Logo">
-                </a>
-
-                <p class="footer-description">
-                    Professional cleaning services in Potchefstroom.
-                    Helping you enjoy cleaner, fresher spaces.
-                </p>
-            </div>
-
-
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-
-                <a href="index.html">Home</a>
-                <a href="services.html">Our Services</a>
-                <a href="pricing.html">Pricing</a>
-                <a href="contact.html">Contact Us</a>
-                <a href="booking.html">Book a Service</a>
-            </div>
-
-
-            <div class="footer-column">
-                <h3>Get in Touch</h3>
-
-                <a href="tel:+27716283009">
-                    <i class="fas fa-phone"></i>
-                    071 628 3009
-                </a>
-
-                <a href="https://wa.me/27716283009" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-whatsapp"></i>
-                    WhatsApp Us
-                </a>
-
-                <a href="mailto:sinesentials@gmail.com">
-                    <i class="fas fa-envelope"></i>
-                    sinesentials@gmail.com
-                </a>
-
-                <p>
-                    <i class="fas fa-location-dot"></i>
-                    Potchefstroom, South Africa
-                </p>
-            </div>
-
-        </div>
-
-
-        <div class="footer-bottom">
-            © 2026 Sinesentials. All rights reserved.
-        </div>
-
-    </footer>
-
-
-    <!-- MOBILE MENU -->
-    <script>
-        const menuToggle = document.getElementById("menuToggle");
-        const siteMenu = document.getElementById("siteMenu");
-
-        menuToggle.addEventListener("click", function () {
-            const isOpen = siteMenu.classList.toggle("active");
-
-            menuToggle.setAttribute("aria-expanded", isOpen);
-
-            menuToggle.innerHTML = isOpen
-                ? '<i class="fas fa-times"></i>'
-                : '<i class="fas fa-bars"></i>';
-        });
-
-        document.querySelectorAll(".site-menu a").forEach(function (link) {
-            link.addEventListener("click", function () {
-                siteMenu.classList.remove("active");
-                menuToggle.setAttribute("aria-expanded", "false");
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-    </script>
 
 </body>
 </html>
