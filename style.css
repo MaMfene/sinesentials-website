@@ -77,20 +77,15 @@ img {
   max-width: 1400px;
   margin: 20px auto 0;
   padding: 12px 30px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 25px;
-
   background: rgba(255,255,255,.96);
   backdrop-filter: blur(18px);
-
   border: 1px solid rgba(255,255,255,.8);
   border-radius: 24px;
-
   box-shadow: var(--shadow-sm);
-
   position: relative;
   z-index: 100;
 }
@@ -105,19 +100,19 @@ img {
   text-decoration: none;
   overflow: hidden;
   border-radius: 12px;
+  padding: 4px 8px;
 }
 
-.logo.jpeg {
+.logo-img {
   display: block;
   width: 155px;
-  height: 88px;
-  object-fit: cover;
+  height: 78px;
+  object-fit: contain;
   object-position: center;
-  mix-blend-mode: multiply;
   transition: transform .3s ease;
 }
 
-.brand:hover .logo.jpeg {
+.brand:hover .logo-img {
   transform: scale(1.025);
 }
 
@@ -169,16 +164,12 @@ img {
   align-items: center;
   justify-content: center;
   gap: 10px;
-
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
   color: var(--white);
-
   padding: 15px 26px;
   border-radius: 999px;
-
   font-size: 14px;
   font-weight: 900;
-
   box-shadow: 0 12px 30px rgba(15,76,219,.20);
   transition: .3s ease;
 }
@@ -897,7 +888,6 @@ img {
   padding: 17px 26px;
   border-radius: 999px;
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  color: var(--primary-dark);
   color: white;
   text-decoration: none;
   font-weight: 900;
@@ -937,15 +927,16 @@ img {
   align-items: center;
   justify-content: center;
   padding: 8px 14px;
-  background: #F8F7F2;
+  background: #FFFFFF;
   border-radius: 16px;
   box-shadow: 0 8px 22px rgba(0,0,0,.12);
+  overflow: hidden;
 }
 
 .footer-brand img {
   display: block;
   width: 165px;
-  height: 95px;
+  height: 85px;
   object-fit: contain;
   border-radius: 8px;
 }
@@ -1295,7 +1286,7 @@ img {
 
   .footer-brand img {
     width: 145px;
-    height: 85px;
+    height: 78px;
   }
 }
 
