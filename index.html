@@ -1,149 +1,426 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Sinesentials | Home</title>
+  <title>Sinesentials | Professional Cleaning Services</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <meta name="description" content="Affordable, reliable and student-friendly cleaning services in Potchefstroom. Book your cleaning service with Sinesentials.">
 
-  <!-- Font Awesome (ADD THIS LINE) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Your CSS -->
-  <link rel="stylesheet" href="style.css" />
-  <script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
+  <link rel="stylesheet" href="style.css">
+
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
-  <script>
-const menuToggle =
-document.getElementById("menuToggle");
 
-const mobileNav =
-document.getElementById("mobileNav");
-
-menuToggle.addEventListener("click", () => {
-  mobileNav.classList.toggle("active");
-});
-</script>
 <body>
-  <div class="site-shell">
-    <header class="topbar">
-      <div class="brand">
-        <img src="logo.jpeg" alt="Sinesentials logo" class="logo-img" />
-        <span>Sinesentials</span>
-      </div>
 
-     <button class="menu-toggle" id="menuToggle">
-  <i class="fas fa-bars"></i>
-</button>
+<div class="site-shell">
 
-<nav class="nav" id="mobileNav">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <!-- NAVIGATION -->
 
-      <div class="topbar-right">
-        <a href="tel:+27716283009" class="phone-link">071 628 3009</a>
-        <a href="contact.html" class="book-btn">Book Now</a>
-      </div>
-    </header>
+  <header class="topbar">
 
-    <main class="page-main">
-      <section class="hero hero-home">
-  <div class="hero-left">
-    <p class="eyebrow">CLEANING SERVICES</p>
+    <a href="index.html" class="brand">
+      <img src="logo.jpeg" alt="Sinesentials logo" class="logo-img">
+      <span>Sinesentials</span>
+    </a>
 
-    <h1>
-      Bringing back the
-      <span>shine</span>
-      to your space.
-    </h1>
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mobileNav"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
 
-    <p class="hero-text">
-      Affordable, reliable, and student-friendly cleaning services in
-      Potchefstroom. Let Sinesentials handle the mess.
-    </p>
+    <nav class="nav" id="mobileNav">
 
-    <div class="hero-actions">
-      <a href="services.html" class="primary-btn">Our Services</a>
-      <a href="contact.html" class="secondary-btn">Get in Touch</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+
+    </nav>
+
+    <div class="topbar-right">
+
+      <a href="tel:+27716283009" class="phone-link">
+        <i class="fas fa-phone"></i>
+        071 628 3009
+      </a>
+
+      <a href="booking.html" class="book-btn">
+        Book Now <i class="fas fa-arrow-right"></i>
+      </a>
+
     </div>
-  </div>
 
-  <div class="hero-right">
-    <img src="background.png" alt="Cleaning service" />
-  </div>
-</section>
+  </header>
 
-      <section class="home-grid">
-        <div class="feature-card large-card">
-          <div class="card-title-row">
-            <h2>Why Choose Us</h2>
+
+  <!-- MAIN CONTENT -->
+
+  <main class="page-main">
+
+    <!-- HERO SECTION -->
+
+    <section class="hero hero-home">
+
+      <div class="hero-left">
+
+        <p class="eyebrow">
+          <i class="fas fa-sparkles"></i>
+          PROFESSIONAL CLEANING SERVICES
+        </p>
+
+        <h1>
+          Bringing back the
+          <span>shine</span>
+          to your space.
+        </h1>
+
+        <p class="hero-text">
+          Affordable, reliable, and student-friendly cleaning
+          services in Potchefstroom. Let Sinesentials handle
+          the mess while you enjoy a fresh, spotless space.
+        </p>
+
+        <div class="hero-actions">
+
+          <a href="services.html" class="primary-btn">
+            Explore Services
+            <i class="fas fa-arrow-right"></i>
+          </a>
+
+          <a href="booking.html" class="secondary-btn">
+            Book a Cleaning
+          </a>
+
+        </div>
+
+        <div class="hero-trust">
+
+          <div>
+            <i class="fas fa-check-circle"></i>
+            Reliable Service
           </div>
 
-          <div class="feature-list">
-            <div>
-              <h3>Affordable Pricing</h3>
-              <p>Cleaning packages that work for student budgets and households.</p>
-            </div>
+          <div>
+            <i class="fas fa-check-circle"></i>
+            Affordable Pricing
+          </div>
 
-            <div>
-              <h3>Reliable Service</h3>
-              <p>We show up ready to work and leave your space fresh and spotless.</p>
-            </div>
+        </div>
 
-            <div>
-              <h3>Student-Friendly</h3>
-              <p>Perfect for rooms, flats, after-parties, and end-of-lease cleanups.</p>
-            </div>
+      </div>
+
+
+      <div class="hero-right">
+
+        <img
+          src="background.png"
+          alt="Sinesentials professional cleaning services"
+        >
+
+        <div class="image-badge">
+          <i class="fas fa-sparkles"></i>
+
+          <div>
+            <strong>Fresh & Spotless</strong>
+            <span>A cleaner space starts here</span>
           </div>
         </div>
 
-        <aside class="contact-card">
-          <div class="contact-top">
-            <h2>Contact</h2>
-            <div class="contact-icon">✉</div>
-          </div>
+      </div>
 
-          <p class="contact-copy">
-            Need a clean space fast? Reach out today for bookings and pricing.
+    </section>
+
+
+    <!-- WHY CHOOSE US -->
+
+    <section class="home-grid">
+
+      <div class="feature-card large-card">
+
+        <div class="section-heading">
+
+          <p class="eyebrow">WHY SINESENTIALS?</p>
+
+          <h2>
+            A cleaner space.
+            <span>A better feeling.</span>
+          </h2>
+
+          <p>
+            We make keeping your space clean simple,
+            convenient and affordable.
           </p>
 
-          <div class="contact-call-box">
-            <span>CALL OR WHATSAPP</span>
-            <a href="tel:+27716283009">071 628 3009</a>
+        </div>
+
+
+        <div class="feature-list">
+
+          <div class="feature-item">
+
+            <div class="feature-icon">
+              <i class="fas fa-wallet"></i>
+            </div>
+
+            <h3>Affordable Pricing</h3>
+
+            <p>
+              Cleaning packages designed for student budgets
+              and households.
+            </p>
+
           </div>
 
-          <a href="https://wa.me/27716283009" target="_blank" class="message-btn">
-            Send a Message
+
+          <div class="feature-item">
+
+            <div class="feature-icon">
+              <i class="fas fa-star"></i>
+            </div>
+
+            <h3>Reliable Service</h3>
+
+            <p>
+              We arrive ready to work and leave your space
+              looking fresh and spotless.
+            </p>
+
+          </div>
+
+
+          <div class="feature-item">
+
+            <div class="feature-icon">
+              <i class="fas fa-house"></i>
+            </div>
+
+            <h3>Student-Friendly</h3>
+
+            <p>
+              Perfect for rooms, flats, after-parties
+              and end-of-lease cleanups.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- CONTACT CARD -->
+
+      <aside class="contact-card">
+
+        <div class="contact-top">
+
+          <div>
+            <p class="contact-label">LET'S GET STARTED</p>
+            <h2>Need a clean space?</h2>
+          </div>
+
+          <div class="contact-icon">
+            <i class="fas fa-message"></i>
+          </div>
+
+        </div>
+
+        <p class="contact-copy">
+          Get in touch with us today for enquiries,
+          bookings and pricing.
+        </p>
+
+
+        <div class="contact-call-box">
+
+          <span>CALL OR WHATSAPP</span>
+
+          <a href="tel:+27716283009">
+            071 628 3009
           </a>
-        </aside>
-      </section>
-    </main>
-    <footer>
-  <p>&copy; 2026 Sinesentials. All rights reserved.</p>
 
-  <div class="socials">
-    <a href="https://www.tiktok.com/@Sinesentials" target="_blank">
-      <i class="fab fa-tiktok"></i>
-    </a>
+        </div>
 
-    <a href="https://www.instagram.com/Sinesentials" target="_blank">
-      <i class="fab fa-instagram"></i>
-    </a>
 
-    <a href="https://www.facebook.com/" target="_blank">
-      <i class="fab fa-facebook-f"></i>
-    </a>
-  </div>
-</footer>
-  </div>
+        <a
+          href="https://wa.me/27716283009"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="message-btn"
+        >
+          <i class="fab fa-whatsapp"></i>
+          Chat With Us
+        </a>
+
+        <a href="booking.html" class="contact-book-link">
+          Make a Booking
+          <i class="fas fa-arrow-right"></i>
+        </a>
+
+      </aside>
+
+    </section>
+
+
+    <!-- CALL TO ACTION -->
+
+    <section class="cta-section">
+
+      <div>
+
+        <p class="eyebrow">YOUR SPACE DESERVES THE BEST</p>
+
+        <h2>Ready for a fresh start?</h2>
+
+        <p>
+          Let Sinesentials take care of the cleaning.
+          Your cleaner space is just one booking away.
+        </p>
+
+      </div>
+
+      <a href="booking.html" class="cta-btn">
+        Book Your Service
+        <i class="fas fa-arrow-right"></i>
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="footer-content">
+
+      <div class="footer-brand">
+
+        <img src="logo.jpeg" alt="Sinesentials logo">
+
+        <div>
+          <h3>Sinesentials</h3>
+          <p>Bringing back the shine to your space.</p>
+        </div>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="booking.html">Book Now</a>
+        <a href="contact.html">Contact</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        &copy; 2026 Sinesentials. All rights reserved.
+      </p>
+
+      <div class="socials">
+
+        <a
+          href="https://www.tiktok.com/@Sinesentials"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="TikTok"
+        >
+          <i class="fab fa-tiktok"></i>
+        </a>
+
+        <a
+          href="https://www.instagram.com/Sinesentials"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</div>
+
+
+<!-- MOBILE MENU SCRIPT -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileNav = document.getElementById("mobileNav");
+
+  if (!menuToggle || !mobileNav) return;
+
+  menuToggle.addEventListener("click", function () {
+
+    const isOpen = mobileNav.classList.toggle("active");
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+
+    menuToggle.innerHTML = isOpen
+      ? '<i class="fas fa-times"></i>'
+      : '<i class="fas fa-bars"></i>';
+
+  });
+
+
+  mobileNav.querySelectorAll("a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+      mobileNav.classList.remove("active");
+
+      menuToggle.setAttribute("aria-expanded", "false");
+
+      menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+
+    });
+
+  });
+
+});
+
+</script>
+
 </body>
 </html>
