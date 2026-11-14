@@ -107,7 +107,7 @@ img {
   border-radius: 12px;
 }
 
-.logo-img {
+.logo.jpeg {
   display: block;
   width: 155px;
   height: 88px;
@@ -117,7 +117,7 @@ img {
   transition: transform .3s ease;
 }
 
-.brand:hover .logo-img {
+.brand:hover .logo.jpeg {
   transform: scale(1.025);
 }
 
